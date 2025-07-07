@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class PipeSpawnScript : MonoBehaviour
 {
+
+  public LogicScript logic; // Reference to the LogicScript component
   public GameObject pipe; // The prefab for the pipe
-  public float spawnRate = 2; // Time interval between spawns
+  public float spawnRate = 10; // Time interval between spawns
   private float timer = 0f; // Time when the next pipe will spawn
 
   public float heightOffset = 8; // Height at which pipes will be spawned
@@ -12,12 +14,14 @@ public class PipeSpawnScript : MonoBehaviour
   // Start is called once before the first execution of Update after the MonoBehaviour is created
   void Start()
   {
+    logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     spawnPipe();
   }
 
   // Update is called once per frame
   void Update()
   {
+    spawnRate = 10 / logic.moveSpeed;
     if (timer < spawnRate)
     {
       timer += Time.deltaTime; // Increment the timer

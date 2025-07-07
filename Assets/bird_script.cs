@@ -35,7 +35,7 @@ public class bird_script : MonoBehaviour
     if (!logic.birdIsAlive)
     {
       myRigidbody.linearVelocity = Vector2.zero; // Stop the bird's movement if it is not alive
-      transform.position = transform.position + Vector3.left * 5 * Time.deltaTime;
+      transform.position = transform.position + Vector3.left * logic.moveSpeed * Time.deltaTime;
       myRigidbody.gravityScale = 0; // Disable gravity to stop the bird from falling
       myRigidbody.bodyType = RigidbodyType2D.Kinematic; // Make the Rigidbody kinematic to stop physics interactions
     }
