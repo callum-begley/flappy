@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class pipeScript : MonoBehaviour
+public class CloudScript : MonoBehaviour
 {
 
-  public float moveSpeed = 5f; // Speed at which the pipe moves left
+  public float moveSpeed = 4f; // Speed at which the pipe moves left
   public float deadzone = -45; // Distance from the left edge of the screen to destroy the pipe
   // Start is called once before the first execution of Update after the MonoBehaviour is created
   void Start()

@@ -6,7 +6,7 @@ public class PipeSpawnScript : MonoBehaviour
   public float spawnRate = 2; // Time interval between spawns
   private float timer = 0f; // Time when the next pipe will spawn
 
-  public float heightOffset = 7; // Height at which pipes will be spawned
+  public float heightOffset = 8; // Height at which pipes will be spawned
 
 
   // Start is called once before the first execution of Update after the MonoBehaviour is created
