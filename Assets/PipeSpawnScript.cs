@@ -3,10 +3,10 @@ using UnityEngine;
 public class PipeSpawnScript : MonoBehaviour
 {
   public GameObject pipe; // The prefab for the pipe
-  public float spawnRate = 2f; // Time interval between spawns
-  private float timer = 0; // Time when the next pipe will spawn
+  public float spawnRate = 2; // Time interval between spawns
+  private float timer = 0f; // Time when the next pipe will spawn
 
-  public float heightOffset = 10; // Height at which pipes will be spawned
+  public float heightOffset = 7; // Height at which pipes will be spawned
 
 
   // Start is called once before the first execution of Update after the MonoBehaviour is created
