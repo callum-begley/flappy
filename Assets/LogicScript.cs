@@ -20,7 +20,7 @@ public class LogicScript : MonoBehaviour
     {
       highScore = PlayerPrefs.GetInt(HighScoreKey);
       if (highScoreText != null)
-        highScoreText.text = "High Score: " + highScore.ToString();
+        highScoreText.text = highScore.ToString();
     }
   }
 
@@ -37,15 +37,6 @@ public class LogicScript : MonoBehaviour
     playerScore++; // Increment the score
     scoreText.text = playerScore.ToString(); // Update the UI text
 
-    // Check and update high score
-    if (playerScore > highScore)
-    {
-      highScore = playerScore;
-      PlayerPrefs.SetInt(HighScoreKey, highScore);
-      PlayerPrefs.Save();
-      if (highScoreText != null)
-        highScoreText.text = "High Score: " + highScore.ToString();
-    }
     if (playerScore == 10) // Check if the score reaches a certain threshold
     {
       moveSpeed += 2f; // Increase the speed of the pipes
@@ -75,14 +66,22 @@ public class LogicScript : MonoBehaviour
     scoreText.text = playerScore.ToString(); // Update the UI text
     // Show high score after restart
     if (highScoreText != null)
-      highScoreText.text = "High Score: " + highScore.ToString();
+      highScoreText.text = highScore.ToString();
     // Additional logic to reset the game can be added here
   }
-  
+
   public void GameOver()
   {
     // Logic for game over can be added here, such as showing a game over screen
     gameOverScreen.SetActive(true); // Show the Game Over screen
-    Debug.Log("Game Over! Your score: " + playerScore);
+     // Check and update high score
+    if (playerScore > highScore)
+    {
+      highScore = playerScore;
+      PlayerPrefs.SetInt(HighScoreKey, highScore);
+      PlayerPrefs.Save();
+      if (highScoreText != null)
+        highScoreText.text = highScore.ToString();
+    }
   }
 }
