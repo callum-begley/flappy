@@ -73,6 +73,7 @@ public class LogicScript : MonoBehaviour
   public void GameOver()
   {
     // Logic for game over can be added here, such as showing a game over screen
+    
     gameOverScreen.SetActive(true); // Show the Game Over screen
      // Check and update high score
     if (playerScore > highScore)
