@@ -37,6 +37,8 @@ public class LogicScript : MonoBehaviour
     playerScore++; // Increment the score
     scoreText.text = playerScore.ToString(); // Update the UI text
 
+    
+
     if (playerScore == 10) // Check if the score reaches a certain threshold
     {
       moveSpeed += 2f; // Increase the speed of the pipes
